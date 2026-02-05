@@ -53,7 +53,7 @@ app.get('/api/player/:playerId', async (req, res) => {
       }
       
       return res.status(response.status).json({ 
-        error: `Erro na API: ${response.status} - ${response.statusText}` 
+        error: `Erro na API: ${response}` 
       });
     }
 
