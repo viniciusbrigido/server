@@ -40,7 +40,9 @@ app.get('/api/player/:playerId', async (req, res) => {
     });
 
     if (!response.ok) {
-      console.error(`Erro na API: ${response}`);
+      console.error(`Erro na API: ${response.error}`);
+      console.error(`Erro na API: ${response.error?.error}`);
+      console.error(`Erro na API: ${response.error?.message}`);
       
       if (response.status === 403) {
         return res.status(403).json({ error: 'Token inválido ou expirado' });
