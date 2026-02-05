@@ -65,7 +65,7 @@ app.get('/api/player/:playerId', async (req, res) => {
     res.json(data);
   } catch (error) {
     console.error('Erro no servidor:', error);
-    res.status(500).json({ error: 'Erro interno do servidor' });
+    res.status(500).json({ error: 'Erro interno do servidor', responseError: response });
   }
 });
 
