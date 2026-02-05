@@ -40,7 +40,7 @@ app.get('/api/player/:playerId', async (req, res) => {
     });
 
     if (!response.ok) {
-      console.error(`Erro na API: ${response.status} - ${response.statusText}`);
+      console.error(`Erro na API: ${response}`);
       
       if (response.status === 403) {
         return res.status(403).json({ error: 'Token inválido ou expirado' });
@@ -53,7 +53,7 @@ app.get('/api/player/:playerId', async (req, res) => {
       }
       
       return res.status(response.status).json({ 
-        error: `Erro na API: ${response}` 
+        error: `Erro na API: ${response}`
       });
     }
 
